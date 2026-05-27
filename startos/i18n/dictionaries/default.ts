@@ -6,27 +6,24 @@ const dict = {
   'Daemon status': 1,
   'Charge LND is running': 2,
   'Charge LND is not responding': 3,
-
-  // runNow.ts
-  'Apply Configuration': 4,
-  'Runs Charge LND immediately to apply new configuration.': 5,
-  'New Configuration Applied': 6,
-  'No output (fees already correct or no channels matched).': 7,
-
-  // manifest
-  'Policy based fee manager for LND': 8,
-  'Charge LND matches your open Lightning channels against customizable criteria and applies channel fees based on matching policies.': 9,
-  'Required to connect to your Lightning node and apply fee policies.': 10,
-  'Charge LND will run every hour to apply your fee policies based on the charge.config file.': 11,
+  'Next evaluation in {mins}m': 4,
+  'Evaluating channels now...': 5,
 
   // editConfig.ts
-  'Run Interval (Seconds)': 12,
-  'How often Charge LND runs. Default is 3600 (1 hour). Minimum 60 seconds.': 13,
-  'Fee Policies (charge.config)': 14,
-  'Define your routing policies in INI format.': 15,
-  'Edit Configuration': 16,
-  'Update your fee policies and execution timer. Changes are applied immediately.': 17,
-  'Configuration Saved & Applied': 18,
+  'Run Interval (Seconds)': 6,
+  'How often Charge LND runs. Default is 3600 (1 hour). Minimum 60 seconds.': 7,
+  'Fee Policies (charge.config)': 8,
+  'Define your routing policies in INI format.': 9,
+  'Edit Configuration': 10,
+  'Update your fee policies and execution timer. Changes are applied immediately.': 11,
+  'Configuration Saved & Applied': 12,
+  'No output (fees already correct or no channels matched).': 13,
+
+  // manifest
+  'Policy based fee manager for LND': 14,
+  'Charge LND matches your open Lightning channels against customizable criteria and applies channel fees based on matching policies.': 15,
+  'Required to connect to your Lightning node and apply fee policies.': 16,
+  'Charge LND will run every hour to apply your fee policies based on the charge.config file.': 17,
 } as const
 
 /**

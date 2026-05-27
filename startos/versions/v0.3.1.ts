@@ -11,8 +11,7 @@ export const v_0_3_1 = VersionInfo.of({
   },
   migrations: {
     up: async ({ effects }) => {
-      // This is the initial release (0.2.13:1), so there are no legacy 
-      // wrapper files or directories to migrate or clean up.
+     
     },
     down: IMPOSSIBLE,
   },

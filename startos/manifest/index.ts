@@ -13,7 +13,7 @@ export const manifest = setupManifest({
   volumes: ['main'],
   images: {
     'charge-lnd': {
-      source: { dockerBuild: {} }, // Uses our custom Dockerfile
+      source: { dockerBuild: {} }, 
       arch: ['x86_64', 'aarch64'],
     },
   },

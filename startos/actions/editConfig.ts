@@ -50,11 +50,10 @@ export const editConfig = sdk.Action.withInput(
     }
   },
   async ({ effects, input }) => {
-    // 1. Save both the INI file and the timer settings simultaneously
     await chargeConfig.write(effects, input.configText)
     await settingsJson.merge(effects, { intervalSeconds: input.interval })
+    await sdk.restart(effects)
     
-    // 2. Run charge-lnd immediately to apply and evaluate
     const res = await sdk.SubContainer.withTemp(
       effects,
       { imageId: 'charge-lnd' },
@@ -79,7 +78,6 @@ export const editConfig = sdk.Action.withInput(
       throw new Error(escapeHtml(combinedOutput))
     }
 
-    // 3. Parse and format the output
     const lines = combinedOutput.split('\n')
     const channels: { header: string; details: string[] }[] = []
     let currentChannel: { header: string; details: string[] } | null = null
@@ -119,7 +117,6 @@ export const editConfig = sdk.Action.withInput(
       channels.forEach((ch, index) => {
         const openAttr = index === 0 ? 'open' : ''
         
-        // Format the header using StartOS native CSS classes
         const headerMatch = ch.header.match(/^(\d+x\d+x\d+)\s+\[(.*)\|([^\]]+)\]$/)
         let formattedHeader = escapeHtml(ch.header)
         if (headerMatch) {
@@ -127,10 +124,8 @@ export const editConfig = sdk.Action.withInput(
           formattedHeader = `<span class="g-warning">${escapeHtml(chanId)}</span> &nbsp;|&nbsp; <span class="g-primary">${escapeHtml(alias)}</span> <span class="g-secondary">${escapeHtml(pubkey)}</span>`
         }
 
-        // Format the details block and highlight fee changes
         let detailsHtml = escapeHtml(ch.details.join('\n'))
         
-        // FIX: Match "-&gt;" because escapeHtml already converted the ">" character!
         detailsHtml = detailsHtml.replace(/(\d+)\s*➜\s*(\d+)/g, '<span class="g-info">$1 ➜ $2</span>')
 
         bodyHtml += `

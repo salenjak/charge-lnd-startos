@@ -8,7 +8,5 @@ export const seedFiles = sdk.setupOnInit(async (effects) => {
   if (!currentConfig) {
     await chargeConfig.write(effects, defaultConfig)
   }
-  
-  // Seed the settings file with the default 1 hour interval
-  await settingsJson.merge(effects, { intervalSeconds: 3600 })
+    await settingsJson.merge(effects, { intervalSeconds: 3600 })
 })

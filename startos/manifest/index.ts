@@ -5,7 +5,7 @@ export const manifest = setupManifest({
   id: 'charge-lnd',
   title: 'Charge LND',
   license: 'MIT',
-  packageRepo: 'https://github.com/Start9-Community/charge-lnd-startos',
+  packageRepo: 'https://github.com/salenjak/charge-lnd-startos',
   upstreamRepo: 'https://github.com/accumulator/charge-lnd',
   marketingUrl: 'https://github.com/accumulator/charge-lnd',
   donationUrl: null,

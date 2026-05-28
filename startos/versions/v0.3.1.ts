@@ -1,18 +1,16 @@
 import { IMPOSSIBLE, VersionInfo } from '@start9labs/start-sdk'
 
 export const v_0_3_1 = VersionInfo.of({
-  version: '0.3.1:1',
+  version: '0.3.1:2',
   releaseNotes: {
-    en_US: 'Initial release of Charge LND for StartOS 0.4.0. Policy based fee manager for LND.',
-    es_ES: 'Lanzamiento inicial de Charge LND para StartOS 0.4.0. Administrador de tarifas basado en políticas para LND.',
-    de_DE: 'Erstveröffentlichung von Charge LND für StartOS 0.4.0. Richtlinienbasierter Gebührenmanager für LND.',
-    pl_PL: 'Pierwsze wydanie Charge LND dla StartOS 0.4.0. Menadżer opłat oparty na politykach dla LND.',
-    fr_FR: 'Version initiale de Charge LND pour StartOS 0.4.0. Gestionnaire de frais basé sur des politiques pour LND.',
+    en_US: 'Fixed critical bug where custom daemon timers were reset to default on server reboot. Refined health check status typography.',
+    es_ES: 'Corregido error critico donde los temporizadores se restablecian al reiniciar. Mejorada la tipografia del estado.',
+    de_DE: 'Kritischer Fehler behoben, bei dem Timer beim Neustart zurueckgesetzt wurden. Typografie des Status verfeinert.',
+    pl_PL: 'Naprawiono blad resetowania timera po restarcie. Ulepszono typografie statusu.',
+    fr_FR: 'Correction d\'un bug critique reinitialisant les minuteries au redemarrage. Typographie du statut affinee.',
   },
   migrations: {
-    up: async ({ effects }) => {
-     
-    },
+    up: async ({ effects }) => {},
     down: IMPOSSIBLE,
   },
 })

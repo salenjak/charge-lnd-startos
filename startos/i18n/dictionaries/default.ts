@@ -6,8 +6,8 @@ const dict = {
   'Daemon status': 1,
   'Charge LND is running': 2,
   'Charge LND is not responding': 3,
-  'Next evaluation in {mins}m': 4,
-  'Evaluating channels now...': 5,
+  '— next evaluation in {mins}m.': 4,
+  '— evaluating channels now...': 5,
 
   // editConfig.ts
   'Run Interval (Seconds)': 6,

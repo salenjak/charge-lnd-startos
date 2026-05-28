@@ -54,12 +54,12 @@ export const main = sdk.setupMain(async ({ effects }) => {
                 const mins = Math.ceil(remaining / 60)
                 return { 
                   result: 'success', 
-                  message: `${i18n('Charge LND is running')}. ${i18n('Next evaluation in {mins}m').replace('{mins}', mins.toString())}` 
+                  message: `${i18n('Charge LND is running')} ${i18n('— next evaluation in {mins}m.').replace('{mins}', mins.toString())}` 
                 }
               } else {
                 return { 
                   result: 'success', 
-                  message: `${i18n('Charge LND is running')}. ${i18n('Evaluating channels now...')}` 
+                  message: `${i18n('Charge LND is running')} ${i18n('— evaluating channels now...')}` 
                 }
               }
             }
